@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Contestant_name"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/question_one"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/question_one_ans_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="legal obligation" />
+
+            <CheckBox
+                android:id="@+id/question_one_ans_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharia obligation" />
+
+            <CheckBox
+                android:id="@+id/question_one_ans_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="regulatory obligation" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/question_two"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/question_two_ans_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharia acceptable" />
+
+            <RadioButton
+                android:id="@+id/question_two_ans_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharia prohibited" />
+
+            <RadioButton
+                android:id="@+id/question_two_ans_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharia disfavoured" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/question_three"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/question_three_ans_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fixed commission" />
+
+            <CheckBox
+                android:id="@+id/question_three_ans_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Percentage of the deal value" />
+
+            <CheckBox
+                android:id="@+id/question_three_ans_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None of the above" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/question_four"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/question_four_ans_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="An interest free loan" />
+
+            <RadioButton
+                android:id="@+id/question_four_ans_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mudaraba" />
+
+            <RadioButton
+                android:id="@+id/question_four_ans_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A usurious loan" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/question_five"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/question_five_ans_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mosawama sale" />
+
+            <RadioButton
+                android:id="@+id/question_five_ans_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mozayada sale" />
+
+            <RadioButton
+                android:id="@+id/question_five_ans_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amana sale" />
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Score"
+            android:onClick="updateScore"
+            />
+    </LinearLayout>
+
+</ScrollView>

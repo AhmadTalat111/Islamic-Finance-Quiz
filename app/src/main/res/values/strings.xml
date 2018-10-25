@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Islamic Finance Quiz</string>
+    <string name="Contestant_name">Name</string>
+    <string name="question_one">1- ADIB - Egypt obligation to abide by Islamic Sharia rulings is a ....</string>
+    <string name="question_two">2- Investing in Treasury bonds is ....</string>
+    <string name="question_three">3- The compensation against banking services such as issuing Checkbooks could be in the form of ....</string>
+    <string name="question_four">4- Current accounts in nature is ....</string>
+    <string name="question_five">5- In Murabaha sale, the price must be declared as it is .... </string>
+</resources>
