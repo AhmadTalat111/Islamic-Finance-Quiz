@@ -44,13 +44,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void checkQuestionThree(boolean a, boolean b) {
+    private void checkQuestionThree(boolean a, boolean b, boolean c) {
         if (a && b && questionThreeScore == 0) {
             questionThreeScore += 5;
         }
         if (a && b && questionThreeScore == 5) {
             questionThreeScore = 5;
-        } else {
+        }
+        if (c && a && b ){
             questionThreeScore = 0;
         }
     }
@@ -80,7 +81,14 @@ public class MainActivity extends AppCompatActivity {
     private void finalScore() {
         score = questionOneScore + questionTwoScore + questionThreeScore + questionFourScore + questionFiveScore;
     }
-
+    public void displayScore (String name, int score){
+        if (name.equals("")){
+            Toast.makeText(this, "You must tell us your name" , Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this,  name + " scored " + score, Toast.LENGTH_LONG).show();
+        }
+    }
     public void updateScore(View view) {
         EditText name = findViewById(R.id.name);
         name.getText().toString();
@@ -96,9 +104,11 @@ public class MainActivity extends AppCompatActivity {
         checkQuestionTwo(q2b);
         CheckBox questionThreeA = findViewById(R.id.question_three_ans_one);
         CheckBox questionThreeB = findViewById(R.id.question_three_ans_two);
+        CheckBox questionThreeC = findViewById(R.id.question_three_ans_three);
         boolean q3a = questionThreeA.isChecked();
         boolean q3b = questionThreeB.isChecked();
-        checkQuestionThree(q3a, q3b);
+        boolean q3c = questionThreeC.isChecked();
+        checkQuestionThree(q3a, q3b, q3c);
         RadioButton questionFourA = findViewById(R.id.question_four_ans_one);
         boolean q4a = questionFourA.isChecked();
         checkQuestionFour(q4a);
@@ -106,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         boolean q5c = questionFiveC.isChecked();
         checkQuestionFive(q5c);
         finalScore();
-        Toast.makeText(this, name.getText().toString() + " scored " + score, Toast.LENGTH_LONG).show();
+        displayScore(name.getText().toString(), score);
     }
+
 }
