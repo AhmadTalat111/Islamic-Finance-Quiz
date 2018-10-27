@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private int questionThreeScore = 0;
     private int questionFourScore = 0;
     private int questionFiveScore = 0;
+    private int questionSixScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +52,16 @@ public class MainActivity extends AppCompatActivity {
         if (a && b && questionThreeScore == 5) {
             questionThreeScore = 5;
         }
-        if (c && a && b ){
+        if (c && a && b) {
             questionThreeScore = 0;
         }
+        if (!a) {
+            questionThreeScore = 0;
+        }
+        if (!b) {
+            questionThreeScore = 0;
+        }
+
     }
 
     private void checkQuestionFour(boolean a) {
@@ -78,17 +86,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void checkQuestionSix(String text) {
+
+        if (text.equals("text") && questionSixScore == 0) {
+            questionSixScore += 5;
+        }
+        if (text.equals("text") && questionSixScore == 5) {
+            questionSixScore = 5;
+        } else {
+            questionSixScore = 0;
+        }
+    }
+
     private void finalScore() {
-        score = questionOneScore + questionTwoScore + questionThreeScore + questionFourScore + questionFiveScore;
+        score = questionOneScore + questionTwoScore + questionThreeScore + questionFourScore + questionFiveScore + questionSixScore;
     }
-    public void displayScore (String name, int score){
-        if (name.equals("")){
-            Toast.makeText(this, "You must tell us your name" , Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this,  name + " scored " + score, Toast.LENGTH_LONG).show();
+
+    public void displayScore(String name, int score) {
+        if (name.equals("")) {
+            Toast.makeText(this, "You must tell us your name", Toast.LENGTH_LONG).show();
+//            nameQuestionScore = 0;
+        } else {
+            Toast.makeText(this, name + " scored " + score, Toast.LENGTH_LONG).show();
+//            nameQuestionScore = 5;
         }
     }
+
     public void updateScore(View view) {
         EditText name = findViewById(R.id.name);
         name.getText().toString();
@@ -115,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton questionFiveC = findViewById(R.id.question_five_ans_three);
         boolean q5c = questionFiveC.isChecked();
         checkQuestionFive(q5c);
+        EditText text = findViewById(R.id.text);
+        checkQuestionSix(text.getText().toString());
         finalScore();
         displayScore(name.getText().toString(), score);
     }
