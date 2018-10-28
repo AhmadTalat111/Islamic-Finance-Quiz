@@ -86,12 +86,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void checkQuestionSix(String text) {
+    private void checkQuestionSix(String answer) {
 
-        if (text.equals("text") && questionSixScore == 0) {
+        if (answer.equals("murabaha") && questionSixScore == 0) {
             questionSixScore += 5;
         }
-        if (text.equals("text") && questionSixScore == 5) {
+        if (answer.equals("murabaha") && questionSixScore == 5) {
             questionSixScore = 5;
         } else {
             questionSixScore = 0;
@@ -105,10 +105,8 @@ public class MainActivity extends AppCompatActivity {
     public void displayScore(String name, int score) {
         if (name.equals("")) {
             Toast.makeText(this, "You must tell us your name", Toast.LENGTH_LONG).show();
-//            nameQuestionScore = 0;
         } else {
             Toast.makeText(this, name + " scored " + score, Toast.LENGTH_LONG).show();
-//            nameQuestionScore = 5;
         }
     }
 
@@ -138,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton questionFiveC = findViewById(R.id.question_five_ans_three);
         boolean q5c = questionFiveC.isChecked();
         checkQuestionFive(q5c);
-        EditText text = findViewById(R.id.text);
-        checkQuestionSix(text.getText().toString());
+        EditText userAnswer = findViewById(R.id.user_answer);
+        checkQuestionSix(userAnswer.getText().toString());
         finalScore();
         displayScore(name.getText().toString(), score);
     }
